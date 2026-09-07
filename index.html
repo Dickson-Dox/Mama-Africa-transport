@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAMA AFRICA TRANSPORT</title>
+    <style>
+            :root {
+      --bg: #f5f5f5;
+      --card-bg: #ffffff;
+      --text: #222;
+      --muted: #666;
+      --primary: #1f6feb;
+      --primary-contrast: #fff;
+      --danger: #d93025;
+      --success: #188038;
+      --border: #ddd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: pink;
+      color: var(--text);
+      padding: 16px;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto 16px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav button {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    nav button.active {
+      background: var(--primary);
+      color: var(--primary-contrast);
+      border-color: var(--primary);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section {
+      display: none;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 16px 0 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .row > * {
+      flex: 1 1 200px;
+    }
+
+    button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-contrast);
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #eee;
+      color: #222;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background: #fafafa;
+    }
+
+    .actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .actions button {
+      padding: 4px 8px;
+      font-size: 0.85rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+      margin-bottom:16px;
+    }
+
+    .stat-card {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .stat-value {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .sidebar{
+
+    color: white;
+    padding: 2px;
+    margin-bottom: 2px;
+    }
+    .row{
+      margin-top: 12px;
+    }
+    .kasolo{
+      display:flex; 
+      align-items:flex-end;
+    }
+  .card{
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      float: left;
+      margin-right: 15px;
+      margin-bottom: -5px;
+      max-width: 200px;
+      height: auto;
+}
+.card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 89%;
+      height: 200px;
+      object-fit: cover; /* keeps images clean and same size */
+    }
+.sidebar{
+    background:pink;
+    color: white;
+    padding: 20px;
+}
+.dox{
+  display: flex; align-items:flex-end;
+}
+    </style>
+</head>
+<body>
+    <header>
+    <h2>MAMA AFRICA TRANSPORT</h2>
+    <aside class="sidebar">
+       <div class="card">
+    <img src="LOGO.jpg" alt="logo">
+    <p>Reaching your destination safe is our goal</p>
+    </div>
+    </aside>
+    <nav>
+    <button data-section="dashboard" class="active">Dashboard</button>
+    <button data-section="taxis">Taxis</button>
+    <button data-section="drivers">Drivers</button>
+    <button data-section="trips">Trips</button>
+    <button data-section="fuel">Fuel Expenses</button>
+    <button data-section="maintenance">Maintenance</button>
+    <button data-section="collected">Total Money Collected</button>
+    <button data-section="view-all">View All</button>
+  </nav>
+<main>
+    <!--dashboard-->
+    <br><br>
+    <br><br>
+    <br><br>
+    <section id="dashboard" class="active">
+        <h2>Dashboard</h2>
+        <div class="stat">
+            <div class="stat-card">
+                <div class="stat-label">Total Taxis</div>
+                <div class="stat-value" id="stat-taxis">0</div>
+            </div>
+            <br>
+            <div class="stat-card">
+                <div class="stat-label">Total Drivers</div>
+                <div class="stat-value" id="stat-drivers">0</div>
+            </div>
+            <br>
+            <div class="stat-card">
+                <div class="stat-label">Total Trips</div>
+                <div class="stat-value" id="stat-trips">0</div>
+            </div>
+            <br>
+            <div class="stat-card">
+                <div class="stat-label">Total Revenue(UGX)</div>
+                <div class="stat-value" id="stat-revenue">0</div>
+            </div>
+        </div>
+    </section>
+    <!--Taxis-->
+    <section id="taxis">
+        <h2>Manage Taxis</h2>
+        <form id="taxi-form">
+            <input type="hidden" id="taxi-id">
+            <div class="grid">
+                <div>
+                    <label for="taxi-plate">Car Number Plate</label>
+                    <input type="text" id="taxi-plate" required placeholder="e.g. UA992MA">
+                </div>
+                <div> 
+                    <label for="taxi-make">Make</label>
+                    <input type="text" id="taxi-model" placeholder="e.g.Toyota Hiace">
+                </div>
+                <div>
+                    <label for="taxi-year">Year</label>
+                    <input type="text" id="taxi-year" min="1990" max="2056" placeholder="e.g.2018">
+                </div>
+                <div>
+                    <label for="taxi-color">Color</label>
+                    <input type="text" id="taxi-color" placeholder="e.g.Grey">
+                </div>
+                <div>
+                    <label for="taxi-status">Status</label>
+                    <select id="taxi-status">
+                        <option value="Active">Active</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn-primary">Save Taxi</button>
+                <button type="button" id="taxi-clear" class="btn-secondary">Clear</button>
+            </div>
+        </form>
+        <h3>Taxis List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plate</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Color</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="taxis-table-body"></tbody>
+        </table>
+    </section>
+    <!--Drivers-->
+    <section id="drivers">
+        <h2>Manage Drivers</h2>
+        <form id="driver-form">
+            <input type="hidden" id="driver-id">
+            <div class="grid">
+                <div>
+                    <label for="driver-name">Full Name</label>
+                    <input type="text" id="drver-name"required placeholder="e.g.ssempala dickson" required>
+                </div>
+                <div>
+                    <label for="driver-phone">Phone</label>
+                    <input type="text" id="driver-phone"required placeholder="e.g.0758387804">
+                </div>
+                <div>
+                    <label for="driver-license">License Number</label>
+                    <input type="text" id="driver-license"required placeholder="e.g.DL123456">
+                </div>
+                 <div>
+                    <label for="driver-status">Status</label>
+                    <select id="driver-status">
+                        <option value="Active">Active</option>
+                        <option value="on leave">On Leave</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn-primary">Save Driver</button>
+                <button type="button" id="driver-clear" class="btn-secondary">Clear</button>
+            </div>
+            </form>
+            <h3>Drivers lists</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>License</th>
+                        <th>status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="drivers-table-body"></tbody>
+            </table>
+    </section>
+    <!--Trips-->
+    <section id="trips">
+      <h2>Record a Trip</h2>
+      <form id="trip-form">
+        <input type="hidden" id="trip-id">
+        <div class="grid">
+          <div>
+            <label for="trip-date">Date</label>
+            <input type="date" id="trip-date" required>
+          </div>
+          <div>
+            <label for="trip-taxi">Taxi (Plate)</label>
+            <select id="trip-taxi" required>
+              <option value="">-- Select Taxi --</option>
+            </select>
+          </div>
+          <div>
+            <label for="trip-driver">Driver</label>
+            <select id="trip-driver" required>
+              <option value="">-- Select Driver --</option>
+            </select>
+          </div>
+          <div>
+            <label for="trip-pickup">Pickup Location</label>
+            <input type="text" id="trip-pickup" required placeholder="e.g. Kampala Road">
+          </div>
+          <div>
+            <label for="trip-dropoff">Drop-off Location</label>
+            <input type="text" id="trip-dropoff" required placeholder="e.g. Entebbe Road">
+          </div>
+          <div>
+            <label for="trip-distance">Distance (km)</label>
+            <input type="number" step="0.1" min="0" id="trip-distance" placeholder="e.g. 14.5">
+          </div>
+          <div>
+            <label for="trip-fare">Fare (UGX)</label>
+            <input type="number" min="0" id="trip-fare" required placeholder="e.g. 10000">
+          </div>
+          <div>
+            <label for="trip-payment">Payment Method</label>
+            <select id="trip-payment">
+              <option value="Cash">Cash</option>
+              <option value="Mobile Money">Mobile Money</option>
+              <option value="Card">Card</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="trip-notes">Notes</label>
+            <input type="text" id="trip-notes" placeholder="Optional notes">
+          </div>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn-primary">Save Trip</button>
+          <button type="button" id="trip-clear" class="btn-secondary">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Fuel Expenses -->
+    <section id="fuel">
+      <h2>Record Fuel Expense</h2>
+      <form id="fuel-form">
+        <input type="hidden" id="fuel-id">
+        <div class="grid">
+          <div>
+            <label for="fuel-date">Date</label>
+            <input type="date" id="fuel-date" required>
+          </div>
+          <div>
+            <label for="fuel-taxi">Taxi (Plate)</label>
+            <select id="fuel-taxi" required>
+              <option value="">-- Select Taxi --</option>
+            </select>
+          </div>
+          <div>
+            <label for="fuel-driver">Driver (optional)</label>
+            <select id="fuel-driver">
+              <option value="">-- Select Driver --</option>
+            </select>
+          </div>
+          <div>
+            <label for="fuel-station">Fuel Station / Supplier</label>
+            <input type="text" id="fuel-station" placeholder="e.g. Shell Kampala Road">
+          </div>
+          <div>
+            <label for="fuel-type">Fuel Type</label>
+            <select id="fuel-type">
+              <option value="Petrol">Petrol</option>
+              <option value="Diesel">Diesel</option>
+              <option value="CNG">CNG</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="fuel-litres">Litres</label>
+            <input type="number" step="0.01" min="0" id="fuel-litres" placeholder="e.g. 32.5">
+          </div>
+          <div>
+            <label for="fuel-rate">Rate per Litre (UGX)</label>
+            <input type="number" step="0.01" min="0" id="fuel-rate" placeholder="e.g. 5200">
+          </div>
+          <div>
+            <label for="fuel-amount">Total Amount (UGX)</label>
+            <input type="number" min="0" id="fuel-amount" required placeholder="e.g. 158600">
+          </div>
+          <div>
+            <label for="fuel-odometer">Odometer Reading (km)</label>
+            <input type="number" min="0" id="fuel-odometer" placeholder="e.g. 120500">
+          </div>
+          <div>
+            <label for="fuel-payment">Payment Method</label>
+            <select id="fuel-payment">
+              <option value="Cash">Cash</option>
+              <option value="Mobile Money">Mobile Money</option>
+              <option value="Card">Card</option>
+              <option value="Fleet Card">Fleet Card</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="fuel-notes">Notes</label>
+            <input type="text" id="fuel-notes" placeholder="Optional notes">
+          </div>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn-primary">Save Fuel Record</button>
+          <button type="button" id="fuel-clear" class="btn-secondary">Clear</button>
+        </div>
+      </form>
+
+      <h3>Recent Fuel Records</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Taxi</th>
+            <th>Driver</th>
+            <th>Station</th>
+            <th>Type</th>
+            <th>Litres</th>
+            <th>Rate</th>
+            <th>Amount (UGX)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="fuel-table-body"></tbody>
+      </table>
+    </section>
+
+    <!-- Maintenance -->
+    <section id="maintenance">
+      <h2>Record Maintenance / Repair</h2>
+      <form id="maintenance-form">
+        <input type="hidden" id="maintenance-id">
+        <div class="grid">
+          <div>
+            <label for="maint-date">Date</label>
+            <input type="date" id="maint-date" required>
+          </div>
+          <div>
+            <label for="maint-taxi">Taxi (Plate)</label>
+            <input type="text" id="maint-taxi" required placeholder="e.g.UBK987M">
+          </div>
+          <div>
+            <label for="maint-service-type">Service Type</label>
+            <select id="maint-service-type">
+              <option value="Routine Service">Routine Service</option>
+              <option value="Repair">Repair</option>
+              <option value="Inspection">Inspection</option>
+              <option value="Tyres">Tyres</option>
+              <option value="Oil Change">Oil Change</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="maint-description">Work Performed / Description</label>
+            <input type="text" id="maint-description" placeholder="e.g. Brake pads replacement">
+          </div>
+          <div>
+            <label for="maint-odometer">Odometer (km)</label>
+            <input type="number" min="0" id="maint-odometer" placeholder="e.g. 121000">
+          </div>
+          <div>
+            <label for="maint-parts-cost">Parts Cost (UGX)</label>
+            <input type="number" min="0" id="maint-parts-cost" placeholder="e.g. 80000">
+          </div>
+          <div>
+            <label for="maint-labor-cost">Labor Cost (UGX)</label>
+            <input type="number" min="0" id="maint-labor-cost" placeholder="e.g. 50000">
+          </div>
+          <div>
+            <label for="maint-total-cost">Total Cost (UGX)</label>
+            <input type="number" min="0" id="maint-total-cost" required placeholder="e.g. 130000">
+          </div>
+          <div>
+            <label for="maint-provider">Service Provider / Garage</label>
+            <input type="text" id="maint-provider" placeholder="e.g. City Motors">
+          </div>
+          <div>
+            <label for="maint-notes">Notes</label>
+            <input type="text" id="maint-notes" placeholder="Optional notes">
+          </div>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn-primary">Save Maintenance Record</button>
+          <button type="button" id="maintenance-clear" class="btn-secondary">Clear</button>
+        </div>
+      </form>
+
+      <h3>Recent Maintenance Records</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Taxi</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Parts (UGX)</th>
+            <th>Labor (UGX)</th>
+            <th>Total (UGX)</th>
+            <th>Provider</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="maintenance-table-body"></tbody>
+      </table>
+    </section>
+    <!--Total Money Collected-->
+    <section id="collected">
+      <h2>Total Money Collected</h2>
+      <div class="filters">
+        <div>
+          <label for="coll-from">From Date</label>
+          <input type="data" id="coll-from">
+        </div>
+         <div>
+          <label for="coll-to">To Date</label>
+          <input type="data" id="coll-to">
+        </div>
+        <div class="dox">
+          <button id="coll-apply" class="btn-primary">Apply</button>
+        </div>
+        <div class="dox">
+          <button id="coll-clear" class="btn-secondary">Clear Filters</button>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-label">Total Collected</div>
+          <div class="stat-value" id="coll-total">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Total Trips</div>
+          <div class="stat-value" id="coll-trips-count">0</div>
+        </div>
+        <div class="stat-card">
+        <div class="stat-value">Average Fare</div>
+          <div class="stat-value" id="coll-avg-fare">0</div>
+          </div>
+          </div>
+      </div>
+      <h3>By Taxi</h3>
+      <div class="summary-grid" id="coll-by-taxi"></div>
+      <h3>By Driver</h3>
+      <div class="summary-grid" id="summary-grid" id="coll-by-driver"></div>
+    </section>
+    <!-- View All -->
+    <section id="view-all">
+      <h2>View All Records</h2>
+
+      <div class="filters">
+        <div>
+          <label for="filter-type">Type</label>
+          <select id="filter-type">
+            <option value="trips">Trips</option>
+            <option value="fuel">Fuel</option>
+            <option value="maintenance">Maintenance</option>
+          </select>
+        </div>
+        <div>
+          <label for="filter-from">From Date</label>
+          <input type="date" id="filter-from">
+        </div>
+        <div>
+          <label for="filter-to">To Date</label>
+          <input type="date" id="filter-to">
+        </div>
+        <div>
+          <label for="filter-taxi">Taxi (Plate)</label>
+          <select id="filter-taxi">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div>
+          <label for="filter-driver">Driver</label>
+          <select id="filter-driver">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div  class="kasolo">
+          <button id="apply-filters" class="btn-primary">Apply Filters</button>
+        </div>
+      </div>
+
+      <h3 id="view-all-title">Trips</h3>
+      <table id="view-all-table">
+        <thead>
+          <!-- Dynamic headers -->
+        </thead>
+        <tbody id="view-all-body">
+          <!-- Dynamic rows -->
+        </tbody>
+      </table>
+
+      <div class="row" >
+        <button id="export-csv" class="btn-success">Export CSV</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // ---------- Data helpers (localStorage) ----------
+    const store = {
+      get(key, fallback) {
+        try {
+          const raw = localStorage.getItem(key);
+          return raw ? JSON.parse(raw) : fallback;
+        } catch {
+          return fallback;
+        }
+      },
+      set(key, value) {
+        localStorage.setItem(key, JSON.stringify(value));
+      }
+    };
+
+    function generateId() {
+      return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    }
+
+    // ---------- State ----------
+    let taxis = store.get('taxis', []);
+    let drivers = store.get('drivers', []);
+    let trips = store.get('trips', []);
+    let fuelRecords = store.get('fuelRecords', []);
+    let maintenanceRecords = store.get('maintenanceRecords', []);
+
+    // ---------- Navigation ----------
+    const navButtons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('main section');
+
+    function showSection(id) {
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      navButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.section === id);
+      });
+
+      if (id === 'dashboard') renderDashboard();
+      if (id === 'taxis') renderTaxis();
+      if (id === 'drivers') renderDrivers();
+      if (id === 'trips') prepareTripForm();
+      if (id === 'fuel') {
+        prepareFuelForm();
+        renderFuelTable();
+      }
+      if (id === 'maintenance') {
+        prepareMaintenanceForm();
+        renderMaintenanceTable();
+      }
+      if (id === 'view-all') {
+        populateViewAllFilters();
+        applyViewAllFilters();
+      }
+    }
+
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => showSection(btn.dataset.section));
+    });
+
+    // ---------- Dashboard ----------
+    function renderDashboard() {
+      document.getElementById('stat-taxis').textContent = taxis.length;
+      document.getElementById('stat-drivers').textContent = drivers.length;
+      document.getElementById('stat-trips').textContent = trips.length;
+
+      const revenue = trips.reduce((sum, t) => sum + (Number(t.fare) || 0), 0);
+      const fuelCost = fuelRecords.reduce((sum, f) => sum + (Number(f.amount) || 0), 0);
+      const maintCost = maintenanceRecords.reduce((sum, m) => sum + (Number(m.totalCost) || 0), 0);
+
+      document.getElementById('stat-revenue').textContent = revenue.toLocaleString();
+      document.getElementById('stat-fuel').textContent = fuelCost.toLocaleString();
+      document.getElementById('stat-maintenance').textContent = maintCost.toLocaleString();
+    }
+
+    // ---------- Taxis ----------
+    const taxiForm = document.getElementById('taxi-form');
+    const taxiIdInput = document.getElementById('taxi-id');
+    const taxiClearBtn = document.getElementById('taxi-clear');
+    const taxisTableBody = document.getElementById('taxis-table-body');
+
+    function renderTaxis() {
+      taxisTableBody.innerHTML = '';
+      taxis.forEach(t => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHtml(t.plate)}</td>
+          <td>${escapeHtml(t.make || '')}</td>
+          <td>${escapeHtml(t.model || '')}</td>
+          <td>${escapeHtml(t.year || '')}</td>
+          <td>${escapeHtml(t.color || '')}</td>
+          <td>${escapeHtml(t.status || 'Active')}</td>
+          <td class="actions">
+            <button class="btn-secondary" data-edit="${t.id}">Edit</button>
+            <button class="btn-danger" data-delete="${t.id}">Delete</button>
+          </td>
+        `;
+        taxisTableBody.appendChild(tr);
+      });
+
+      taxisTableBody.querySelectorAll('button[data-edit]').forEach(btn => {
+        btn.addEventListener('click', () => editTaxi(btn.dataset.edit));
+      });
+      taxisTableBody.querySelectorAll('button[data-delete]').forEach(btn => {
+        btn.addEventListener('click', () => deleteTaxi(btn.dataset.delete));
+      });
+    }
+
+    taxiForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = taxiIdInput.value || generateId();
+      const data = {
+        id,
+        plate: document.getElementById('taxi-plate').value.trim(),
+        make: document.getElementById('taxi-make').value.trim(),
+        model: document.getElementById('taxi-model').value.trim(),
+        year: document.getElementById('taxi-year').value.trim(),
+        color: document.getElementById('taxi-color').value.trim(),
+        status: document.getElementById('taxi-status').value
+      };
+
+      const existingIndex = taxis.findIndex(t => t.id === id);
+      if (existingIndex >= 0) {
+        taxis[existingIndex] = data;
+      } else {
+        taxis.push(data);
+      }
+
+      store.set('taxis', taxis);
+      taxiForm.reset();
+      taxiIdInput.value = '';
+      renderTaxis();
+      renderDashboard();
+    });
+
+    taxiClearBtn.addEventListener('click', () => {
+      taxiForm.reset();
+      taxiIdInput.value = '';
+    });
+
+    function editTaxi(id) {
+      const t = taxis.find(x => x.id === id);
+      if (!t) return;
+      taxiIdInput.value = t.id;
+      document.getElementById('taxi-plate').value = t.plate || '';
+      document.getElementById('taxi-make').value = t.make || '';
+      document.getElementById('taxi-model').value = t.model || '';
+      document.getElementById('taxi-year').value = t.year || '';
+      document.getElementById('taxi-color').value = t.color || '';
+      document.getElementById('taxi-status').value = t.status || 'Active';
+      showSection('taxis');
+    }
+
+    function deleteTaxi(id) {
+      if (!confirm('Delete this taxi?')) return;
+      taxis = taxis.filter(t => t.id !== id);
+      store.set('taxis', taxis);
+      renderTaxis();
+      renderDashboard();
+    }
+
+    // ---------- Drivers ----------
+    const driverForm = document.getElementById('driver-form');
+    const driverIdInput = document.getElementById('driver-id');
+    const driverClearBtn = document.getElementById('driver-clear');
+    const driversTableBody = document.getElementById('drivers-table-body');
+
+    function renderDrivers() {
+      driversTableBody.innerHTML = '';
+      drivers.forEach(d => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHtml(d.name)}</td>
+          <td>${escapeHtml(d.phone || '')}</td>
+          <td>${escapeHtml(d.license || '')}</td>
+          <td>${escapeHtml(d.status || 'Active')}</td>
+          <td class="actions">
+            <button class="btn-secondary" data-edit="${d.id}">Edit</button>
+            <button class="btn-danger" data-delete="${d.id}">Delete</button>
+          </td>
+        `;
+        driversTableBody.appendChild(tr);
+      });
+
+      driversTableBody.querySelectorAll('button[data-edit]').forEach(btn => {
+        btn.addEventListener('click', () => editDriver(btn.dataset.edit));
+      });
+      driversTableBody.querySelectorAll('button[data-delete]').forEach(btn => {
+        btn.addEventListener('click', () => deleteDriver(btn.dataset.delete));
+      });
+    }
+
+    driverForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = driverIdInput.value || generateId();
+      const data = {
+        id,
+        name: document.getElementById('driver-name').value.trim(),
+        phone: document.getElementById('driver-phone').value.trim(),
+        license: document.getElementById('driver-license').value.trim(),
+        status: document.getElementById('driver-status').value
+      };
+
+      const existingIndex = drivers.findIndex(d => d.id === id);
+      if (existingIndex >= 0) {
+        drivers[existingIndex] = data;
+      } else {
+        drivers.push(data);
+      }
+
+      store.set('drivers', drivers);
+      driverForm.reset();
+      driverIdInput.value = '';
+      renderDrivers();
+      renderDashboard();
+    });
+
+    driverClearBtn.addEventListener('click', () => {
+      driverForm.reset();
+      driverIdInput.value = '';
+    });
+
+    function editDriver(id) {
+      const d = drivers.find(x => x.id === id);
+      if (!d) return;
+      driverIdInput.value = d.id;
+      document.getElementById('driver-name').value = d.name || '';
+      document.getElementById('driver-phone').value = d.phone || '';
+      document.getElementById('driver-license').value = d.license || '';
+      document.getElementById('driver-status').value = d.status || 'Active';
+      showSection('drivers');
+    }
+
+    function deleteDriver(id) {
+      if (!confirm('Delete this driver?')) return;
+      drivers = drivers.filter(d => d.id !== id);
+      store.set('drivers', drivers);
+      renderDrivers();
+      renderDashboard();
+    }
+
+    // ---------- Trips ----------
+    const tripForm = document.getElementById('trip-form');
+    const tripIdInput = document.getElementById('trip-id');
+    const tripClearBtn = document.getElementById('trip-clear');
+
+    function prepareTripForm() {
+      const taxiSelect = document.getElementById('trip-taxi');
+      const driverSelect = document.getElementById('trip-driver');
+
+      taxiSelect.innerHTML = '<option value="">-- Select Taxi --</option>';
+      driverSelect.innerHTML = '<option value="">-- Select Driver --</option>';
+
+      taxis.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = `${t.plate}${t.make ? ' - ' + t.make : ''}`;
+        taxiSelect.appendChild(opt);
+      });
+
+      drivers.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d.id;
+        opt.textContent = d.name;
+        driverSelect.appendChild(opt);
+      });
+
+      const today = new Date().toISOString().slice(0, 10);
+      document.getElementById('trip-date').value = today;
+    }
+
+    tripForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = tripIdInput.value || generateId();
+      const data = {
+        id,
+        date: document.getElementById('trip-date').value,
+        taxiId: document.getElementById('trip-taxi').value,
+        driverId: document.getElementById('trip-driver').value,
+        pickup: document.getElementById('trip-pickup').value.trim(),
+        dropoff: document.getElementById('trip-dropoff').value.trim(),
+        distance: document.getElementById('trip-distance').value.trim(),
+        fare: Number(document.getElementById('trip-fare').value) || 0,
+        payment: document.getElementById('trip-payment').value,
+        notes: document.getElementById('trip-notes').value.trim()
+      };
+
+      const existingIndex = trips.findIndex(t => t.id === id);
+      if (existingIndex >= 0) {
+        trips[existingIndex] = data;
+      } else {
+        trips.push(data);
+      }
+
+      store.set('trips', trips);
+      tripForm.reset();
+      tripIdInput.value = '';
+      prepareTripForm();
+      renderDashboard();
+      alert('Trip saved.');
+    });
+
+    tripClearBtn.addEventListener('click', () => {
+      tripForm.reset();
+      tripIdInput.value = '';
+      prepareTripForm();
+    });
+
+    // ---------- Fuel Expenses ----------
+    const fuelForm = document.getElementById('fuel-form');
+    const fuelIdInput = document.getElementById('fuel-id');
+    const fuelClearBtn = document.getElementById('fuel-clear');
+    const fuelTableBody = document.getElementById('fuel-table-body');
+
+    function prepareFuelForm() {
+      const taxiSelect = document.getElementById('fuel-taxi');
+      const driverSelect = document.getElementById('fuel-driver');
+
+      taxiSelect.innerHTML = '<option value="">-- Select Taxi --</option>';
+      driverSelect.innerHTML = '<option value="">-- Select Driver --</option>';
+
+      taxis.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = t.plate;
+        taxiSelect.appendChild(opt);
+      });
+
+      drivers.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d.id;
+        opt.textContent = d.name;
+        driverSelect.appendChild(opt);
+      });
+
+      const today = new Date().toISOString().slice(0, 10);
+      document.getElementById('fuel-date').value = today;
+
+      // Auto-calc amount if litres and rate present
+      const litresInput = document.getElementById('fuel-litres');
+      const rateInput = document.getElementById('fuel-rate');
+      const amountInput = document.getElementById('fuel-amount');
+
+      function updateAmount() {
+        const litres = parseFloat(litresInput.value) || 0;
+        const rate = parseFloat(rateInput.value) || 0;
+        if (litres > 0 && rate > 0) {
+          amountInput.value = Math.round(litres * rate);
+        }
+      }
+
+      litresInput.oninput = updateAmount;
+      rateInput.oninput = updateAmount;
+    }
+
+    fuelForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = fuelIdInput.value || generateId();
+      const data = {
+        id,
+        date: document.getElementById('fuel-date').value,
+        taxiId: document.getElementById('fuel-taxi').value,
+        driverId: document.getElementById('fuel-driver').value,
+        station: document.getElementById('fuel-station').value.trim(),
+        fuelType: document.getElementById('fuel-type').value,
+        litres: Number(document.getElementById('fuel-litres').value) || 0,
+        rate: Number(document.getElementById('fuel-rate').value) || 0,
+        amount: Number(document.getElementById('fuel-amount').value) || 0,
+        odometer: Number(document.getElementById('fuel-odometer').value) || 0,
+        payment: document.getElementById('fuel-payment').value,
+        notes: document.getElementById('fuel-notes').value.trim()
+      };
+
+      const existingIndex = fuelRecords.findIndex(f => f.id === id);
+      if (existingIndex >= 0) {
+        fuelRecords[existingIndex] = data;
+      } else {
+        fuelRecords.push(data);
+      }
+
+      store.set('fuelRecords', fuelRecords);
+      fuelForm.reset();
+      fuelIdInput.value = '';
+      prepareFuelForm();
+      renderFuelTable();
+      renderDashboard();
+      alert('Fuel record saved.');
+    });
+
+    fuelClearBtn.addEventListener('click', () => {
+      fuelForm.reset();
+      fuelIdInput.value = '';
+      prepareFuelForm();
+    });
+
+    function renderFuelTable() {
+      fuelTableBody.innerHTML = '';
+      // Show last 20 records
+      const list = [...fuelRecords].reverse().slice(0, 20);
+
+      list.forEach(f => {
+        const taxi = taxis.find(x => x.id === f.taxiId);
+        const driver = drivers.find(x => x.id === f.driverId);
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHtml(f.date || '')}</td>
+          <td>${escapeHtml(taxi ? taxi.plate : '')}</td>
+          <td>${escapeHtml(driver ? driver.name : '')}</td>
+          <td>${escapeHtml(f.station || '')}</td>
+          <td>${escapeHtml(f.fuelType || '')}</td>
+          <td>${(f.litres || 0).toLocaleString()}</td>
+          <td>${(f.rate || 0).toLocaleString()}</td>
+          <td>${(f.amount || 0).toLocaleString()}</td>
+          <td class="actions">
+            <button class="btn-secondary" data-edit="${f.id}">Edit</button>
+            <button class="btn-danger" data-delete="${f.id}">Delete</button>
+          </td>
+        `;
+        fuelTableBody.appendChild(tr);
+      });
+
+      fuelTableBody.querySelectorAll('button[data-edit]').forEach(btn => {
+        btn.addEventListener('click', () => editFuel(btn.dataset.edit));
+      });
+      fuelTableBody.querySelectorAll('button[data-delete]').forEach(btn => {
+        btn.addEventListener('click', () => deleteFuel(btn.dataset.delete));
+      });
+    }
+
+    function editFuel(id) {
+      const f = fuelRecords.find(x => x.id === id);
+      if (!f) return;
+
+      showSection('fuel');
+      prepareFuelForm();
+
+      fuelIdInput.value = f.id;
+      document.getElementById('fuel-date').value = f.date || '';
+      document.getElementById('fuel-taxi').value = f.taxiId || '';
+      document.getElementById('fuel-driver').value = f.driverId || '';
+      document.getElementById('fuel-station').value = f.station || '';
+      document.getElementById('fuel-type').value = f.fuelType || 'Petrol';
+      document.getElementById('fuel-litres').value = f.litres || 0;
+      document.getElementById('fuel-rate').value = f.rate || 0;
+      document.getElementById('fuel-amount').value = f.amount || 0;
+      document.getElementById('fuel-odometer').value = f.odometer || 0;
+      document.getElementById('fuel-payment').value = f.payment || 'Cash';
+      document.getElementById('fuel-notes').value = f.notes || '';
+    }
+
+    function deleteFuel(id) {
+      if (!confirm('Delete this fuel record?')) return;
+      fuelRecords = fuelRecords.filter(f => f.id !== id);
+      store.set('fuelRecords', fuelRecords);
+      renderFuelTable();
+      renderDashboard();
+    }
+
+    // ---------- Maintenance ----------
+    const maintenanceForm = document.getElementById('maintenance-form');
+    const maintenanceIdInput = document.getElementById('maintenance-id');
+    const maintenanceClearBtn = document.getElementById('maintenance-clear');
+    const maintenanceTableBody = document.getElementById('maintenance-table-body');
+
+    function prepareMaintenanceForm() {
+      const taxiSelect = document.getElementById('maint-taxi');
+      taxiSelect.innerHTML = '<option value="">-- Select Taxi --</option>';
+
+      taxis.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = t.plate;
+        taxiSelect.appendChild(opt);
+      });
+
+      const today = new Date().toISOString().slice(0, 10);
+      document.getElementById('maint-date').value = today;
+
+      // Auto-calc total cost
+      const partsInput = document.getElementById('maint-parts-cost');
+      const laborInput = document.getElementById('maint-labor-cost');
+      const totalInput = document.getElementById('maint-total-cost');
+
+      function updateTotal() {
+        const parts = Number(partsInput.value) || 0;
+        const labor = Number(laborInput.value) || 0;
+        totalInput.value = parts + labor;
+      }
+
+      partsInput.oninput = updateTotal;
+      laborInput.oninput = updateTotal;
+    }
+
+    maintenanceForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = maintenanceIdInput.value || generateId();
+      const data = {
+        id,
+        date: document.getElementById('maint-date').value,
+        taxiId: document.getElementById('maint-taxi').value,
+        serviceType: document.getElementById('maint-service-type').value,
+        description: document.getElementById('maint-description').value.trim(),
+        odometer: Number(document.getElementById('maint-odometer').value) || 0,
+        partsCost: Number(document.getElementById('maint-parts-cost').value) || 0,
+        laborCost: Number(document.getElementById('maint-labor-cost').value) || 0,
+        totalCost: Number(document.getElementById('maint-total-cost').value) || 0,
+        provider: document.getElementById('maint-provider').value.trim(),
+        notes: document.getElementById('maint-notes').value.trim()
+      };
+
+      const existingIndex = maintenanceRecords.findIndex(m => m.id === id);
+      if (existingIndex >= 0) {
+        maintenanceRecords[existingIndex] = data;
+      } else {
+        maintenanceRecords.push(data);
+      }
+
+      store.set('maintenanceRecords', maintenanceRecords);
+      maintenanceForm.reset();
+      maintenanceIdInput.value = '';
+      prepareMaintenanceForm();
+      renderMaintenanceTable();
+      renderDashboard();
+      alert('Maintenance record saved.');
+    });
+
+    maintenanceClearBtn.addEventListener('click', () => {
+      maintenanceForm.reset();
+      maintenanceIdInput.value = '';
+      prepareMaintenanceForm();
+    });
+
+    function renderMaintenanceTable() {
+      maintenanceTableBody.innerHTML = '';
+      const list = [...maintenanceRecords].reverse().slice(0, 20);
+
+      list.forEach(m => {
+        const taxi = taxis.find(x => x.id === m.taxiId);
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHtml(m.date || '')}</td>
+          <td>${escapeHtml(taxi ? taxi.plate : '')}</td>
+          <td>${escapeHtml(m.serviceType || '')}</td>
+          <td>${escapeHtml(m.description || '')}</td>
+          <td>${(m.partsCost || 0).toLocaleString()}</td>
+          <td>${(m.laborCost || 0).toLocaleString()}</td>
+          <td>${(m.totalCost || 0).toLocaleString()}</td>
+          <td>${escapeHtml(m.provider || '')}</td>
+          <td class="actions">
+            <button class="btn-secondary" data-edit="${m.id}">Edit</button>
+            <button class="btn-danger" data-delete="${m.id}">Delete</button>
+          </td>
+        `;
+        maintenanceTableBody.appendChild(tr);
+      });
+
+      maintenanceTableBody.querySelectorAll('button[data-edit]').forEach(btn => {
+        btn.addEventListener('click', () => editMaintenance(btn.dataset.edit));
+      });
+      maintenanceTableBody.querySelectorAll('button[data-delete]').forEach(btn => {
+        btn.addEventListener('click', () => deleteMaintenance(btn.dataset.delete));
+      });
+    }
+
+    function editMaintenance(id) {
+      const m = maintenanceRecords.find(x => x.id === id);
+      if (!m) return;
+
+      showSection('maintenance');
+      prepareMaintenanceForm();
+
+      maintenanceIdInput.value = m.id;
+      document.getElementById('maint-date').value = m.date || '';
+      document.getElementById('maint-taxi').value = m.taxiId || '';
+      document.getElementById('maint-service-type').value = m.serviceType || 'Routine Service';
+      document.getElementById('maint-description').value = m.description || '';
+      document.getElementById('maint-odometer').value = m.odometer || 0;
+      document.getElementById('maint-parts-cost').value = m.partsCost || 0;
+      document.getElementById('maint-labor-cost').value = m.laborCost || 0;
+      document.getElementById('maint-total-cost').value = m.totalCost || 0;
+      document.getElementById('maint-provider').value = m.provider || '';
+      document.getElementById('maint-notes').value = m.notes || '';
+    }
+
+    function deleteMaintenance(id) {
+      if (!confirm('Delete this maintenance record?')) return;
+      maintenanceRecords = maintenanceRecords.filter(m => m.id !== id);
+      store.set('maintenanceRecords', maintenanceRecords);
+      renderMaintenanceTable();
+      renderDashboard();
+    }
+
+    // ---------- View All (Trips / Fuel / Maintenance) ----------
+    const filterType = document.getElementById('filter-type');
+    const filterFrom = document.getElementById('filter-from');
+    const filterTo = document.getElementById('filter-to');
+    const filterTaxi = document.getElementById('filter-taxi');
+    const filterDriver = document.getElementById('filter-driver');
+    const applyFiltersBtn = document.getElementById('apply-filters');
+    const exportCsvBtn = document.getElementById('export-csv');
+    const viewAllTitle = document.getElementById('view-all-title');
+    const viewAllTableHead = document.querySelector('#view-all-table thead');
+    const viewAllBody = document.getElementById('view-all-body');
+
+    function populateViewAllFilters() {
+      filterTaxi.innerHTML = '<option value="">All</option>';
+      filterDriver.innerHTML = '<option value="">All</option>';
+
+      taxis.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = t.plate;
+        filterTaxi.appendChild(opt);
+      });
+
+      drivers.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d.id;
+        opt.textContent = d.name;
+        filterDriver.appendChild(opt);
+      });
+    }
+
+    function applyViewAllFilters() {
+      const type = filterType.value;
+      const from = filterFrom.value;
+      const to = filterTo.value;
+      const taxiId = filterTaxi.value;
+      const driverId = filterDriver.value;
+
+      viewAllTitle.textContent =
+        type === 'trips' ? 'Trips' : type === 'fuel' ? 'Fuel Records' : 'Maintenance Records';
+
+      let rows = [];
+      if (type === 'trips') {
+        rows = trips.filter(t => {
+          if (from && t.date < from) return false;
+          if (to && t.date > to) return false;
+          if (taxiId && t.taxiId !== taxiId) return false;
+          if (driverId && t.driverId !== driverId) return false;
+          return true;
+        });
+      } else if (type === 'fuel') {
+        rows = fuelRecords.filter(f => {
+          if (from && f.date < from) return false;
+          if (to && f.date > to) return false;
+          if (taxiId && f.taxiId !== taxiId) return false;
+          if (driverId && f.driverId !== driverId) return false;
+          return true;
+        });
+      } else {
+        rows = maintenanceRecords.filter(m => {
+          if (from && m.date < from) return false;
+          if (to && m.date > to) return false;
+          if (taxiId && m.taxiId !== taxiId) return false;
+          return true;
+        });
+      }
+
+      renderViewAllTable(type, rows);
+    }
+
+    function renderViewAllTable(type, rows) {
+      viewAllTableHead.innerHTML = '';
+      viewAllBody.innerHTML = '';
+
+      let headers = [];
+      if (type === 'trips') {
+        headers = ['Date','Taxi','Driver','Pickup','Drop-off','Distance','Fare','Payment','Notes'];
+        const tr = document.createElement('tr');
+        headers.forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h;
+          tr.appendChild(th);
+        });
+        viewAllTableHead.appendChild(tr);
+
+        rows.forEach(t => {
+          const taxi = taxis.find(x => x.id === t.taxiId);
+          const driver = drivers.find(x => x.id === t.driverId);
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${escapeHtml(t.date || '')}</td>
+            <td>${escapeHtml(taxi ? taxi.plate : '')}</td>
+            <td>${escapeHtml(driver ? driver.name : '')}</td>
+            <td>${escapeHtml(t.pickup || '')}</td>
+            <td>${escapeHtml(t.dropoff || '')}</td>
+            <td>${escapeHtml(t.distance || '')}</td>
+            <td>${(t.fare || 0).toLocaleString()}</td>
+            <td>${escapeHtml(t.payment || '')}</td>
+            <td>${escapeHtml(t.notes || '')}</td>
+          `;
+          viewAllBody.appendChild(tr);
+        });
+      } else if (type === 'fuel') {
+        headers = ['Date','Taxi','Driver','Station','Type','Litres','Rate','Amount','Payment'];
+        const tr = document.createElement('tr');
+        headers.forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h;
+          tr.appendChild(th);
+        });
+        viewAllTableHead.appendChild(tr);
+
+        rows.forEach(f => {
+          const taxi = taxis.find(x => x.id === f.taxiId);
+          const driver = drivers.find(x => x.id === f.driverId);
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${escapeHtml(f.date || '')}</td>
+            <td>${escapeHtml(taxi ? taxi.plate : '')}</td>
+            <td>${escapeHtml(driver ? driver.name : '')}</td>
+            <td>${escapeHtml(f.station || '')}</td>
+            <td>${escapeHtml(f.fuelType || '')}</td>
+            <td>${(f.litres || 0).toLocaleString()}</td>
+            <td>${(f.rate || 0).toLocaleString()}</td>
+            <td>${(f.amount || 0).toLocaleString()}</td>
+            <td>${escapeHtml(f.payment || '')}</td>
+          `;
+          viewAllBody.appendChild(tr);
+        });
+      } else {
+        headers = ['Date','Taxi','Type','Description','Parts','Labor','Total','Provider'];
+        const tr = document.createElement('tr');
+        headers.forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h;
+          tr.appendChild(th);
+        });
+        viewAllTableHead.appendChild(tr);
+
+        rows.forEach(m => {
+          const taxi = taxis.find(x => x.id === m.taxiId);
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${escapeHtml(m.date || '')}</td>
+            <td>${escapeHtml(taxi ? taxi.plate : '')}</td>
+            <td>${escapeHtml(m.serviceType || '')}</td>
+            <td>${escapeHtml(m.description || '')}</td>
+            <td>${(m.partsCost || 0).toLocaleString()}</td>
+            <td>${(m.laborCost || 0).toLocaleString()}</td>
+            <td>${(m.totalCost || 0).toLocaleString()}</td>
+            <td>${escapeHtml(m.provider || '')}</td>
+          `;
+          viewAllBody.appendChild(tr);
+        });
+      }
+    }
+
+    applyFiltersBtn.addEventListener('click', applyViewAllFilters);
+
+    exportCsvBtn.addEventListener('click', () => {
+      const type = filterType.value;
+      const from = filterFrom.value;
+      const to = filterTo.value;
+      const taxiId = filterTaxi.value;
+      const driverId = filterDriver.value;
+
+      let rows = [];
+      let headers = [];
+
+      if (type === 'trips') {
+        headers = ['Date','TaxiPlate','DriverName','Pickup','Dropoff','Distance_km','Fare_UGX','Payment','Notes'];
+        rows = trips.filter(t => {
+          if (from && t.date < from) return false;
+          if (to && t.date > to) return false;
+          if (taxiId && t.taxiId !== taxiId) return false;
+          if (driverId && t.driverId !== driverId) return false;
+          return true;
+        }).map(t => {
+          const taxi = taxis.find(x => x.id === t.taxiId);
+          const driver = drivers.find(x => x.id === t.driverId);
+          return [
+            t.date || '',
+            taxi ? taxi.plate : '',
+            driver ? driver.name : '',
+            t.pickup || '',
+            t.dropoff || '',
+            t.distance || '',
+            t.fare || 0,
+            t.payment || '',
+            t.notes || ''
+          ];
+        });
+      } else if (type === 'fuel') {
+        headers = ['Date','TaxiPlate','DriverName','Station','FuelType','Litres','Rate_UGX','Amount_UGX','Payment'];
+        rows = fuelRecords.filter(f => {
+          if (from && f.date < from) return false;
+          if (to && f.date > to) return false;
+          if (taxiId && f.taxiId !== taxiId) return false;
+          if (driverId && f.driverId !== driverId) return false;
+          return true;
+        }).map(f => {
+          const taxi = taxis.find(x => x.id === f.taxiId);
+          const driver = drivers.find(x => x.id === f.driverId);
+          return [
+            f.date || '',
+            taxi ? taxi.plate : '',
+            driver ? driver.name : '',
+            f.station || '',
+            f.fuelType || '',
+            f.litres || 0,
+            f.rate || 0,
+            f.amount || 0,
+            f.payment || ''
+          ];
+        });
+      } else {
+        headers = ['Date','TaxiPlate','ServiceType','Description','Odometer','Parts_UGX','Labor_UGX','Total_UGX','Provider','Notes'];
+        rows = maintenanceRecords.filter(m => {
+          if (from && m.date < from) return false;
+          if (to && m.date > to) return false;
+          if (taxiId && m.taxiId !== taxiId) return false;
+          return true;
+        }).map(m => {
+          const taxi = taxis.find(x => x.id === m.taxiId);
+          return [
+            m.date || '',
+            taxi ? taxi.plate : '',
+            m.serviceType || '',
+            m.description || '',
+            m.odometer || 0,
+            m.partsCost || 0,
+            m.laborCost || 0,
+            m.totalCost || 0,
+            m.provider || '',
+            m.notes || ''
+          ];
+        });
+      }
+
+      const csvRows = [
+        headers.join(','),
+        ...rows.map(r =>
+          r.map(cell => {
+            const s = String(cell).replace(/"/g, '""');
+            return `"${s}"`;
+          }).join(',')
+        )
+      ];
+
+      const csv = csvRows.join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${type}_export.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    // ---------- Utilities ----------
+    function escapeHtml(str) {
+      return String(str || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    // ---------- Init ----------
+    renderDashboard();
+  </script>
+</body>
+</html>
